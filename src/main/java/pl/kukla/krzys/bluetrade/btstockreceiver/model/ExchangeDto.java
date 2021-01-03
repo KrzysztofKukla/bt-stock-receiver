@@ -16,28 +16,14 @@ import pl.kukla.krzys.bluetrade.btmodel.CurrencyDto;
 @Builder
 public class ExchangeDto {
 
-//    "name": "NASDAQ Stock Exchange",
-//        "acronym": "NASDAQ",
-//        "mic": "XNAS",
-//        "country": "USA",
-//        "country_code": "US",
-//        "city": "New York",
-//        "website": "www.nasdaq.com",
-//        "timezone": {
-//        "timezone": "America/New_York",
-//            "abbr": "EST",
-//            "abbr_dst": "EDT"
-//    },
-//        "currency": {
-//        "code": "USD",
-//            "symbol": "$",
-//            "name": "US Dollar"
-//    }
     private String name;
     private String acronym;
     private String country;
+    private String mic;
+
     @JsonProperty("country_code")
     private String countryCode;
+
     private String city;
     private String website;
     private TimezoneDto timezone;

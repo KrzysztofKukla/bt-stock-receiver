@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import pl.kukla.krzys.bluetrade.btstockreceiver.converter.ExternalExchangeConverter;
 import pl.kukla.krzys.bluetrade.btstockreceiver.gateway.ExternalExchangeApiClient;
+import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeDto;
 import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeSetDto;
 import pl.kukla.krzys.bluetrade.btstockreceiver.service.ExchangeService;
 
@@ -20,9 +21,15 @@ public class ExchangeServiceImpl implements ExchangeService {
     private final ExternalExchangeConverter externalExchangeConverter;
 
     @Override
-    public ExchangeSetDto getAll(String accessKey) {
-        String externalExchanges = externalExchangeApiClient.getAll(accessKey);
-        return externalExchangeConverter.getExchangeSetData(externalExchanges);
+    public ExchangeSetDto getAllExchanges(String accessKey) {
+        String externalExchanges = externalExchangeApiClient.getAllExchanges(accessKey);
+        return externalExchangeConverter.convertToExchangeSet(externalExchanges);
+    }
+
+    @Override
+    public ExchangeDto getExchangeDto(String accessKey, String exchangeIndex) {
+        String exchangeResult = externalExchangeApiClient.getExchangeByIndex(accessKey, exchangeIndex);
+        return externalExchangeConverter.convertToExchangesDto(exchangeResult);
     }
 
 }

@@ -1,5 +1,6 @@
 package pl.kukla.krzys.bluetrade.btstockreceiver.service;
 
+import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeDto;
 import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeSetDto;
 
 /**
@@ -7,6 +8,8 @@ import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeSetDto;
  */
 public interface ExchangeService {
 
-    ExchangeSetDto getAll(String accessKey);
+    ExchangeSetDto getAllExchanges(String accessKey);
+
+    ExchangeDto getExchangeDto(String accessKey, String countryIndex);
 
 }
