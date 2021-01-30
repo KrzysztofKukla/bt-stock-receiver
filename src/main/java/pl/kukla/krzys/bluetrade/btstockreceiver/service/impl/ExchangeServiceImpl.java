@@ -3,10 +3,10 @@ package pl.kukla.krzys.bluetrade.btstockreceiver.service.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import pl.kukla.krzys.bluetrade.btmodel.ExchangeDto;
+import pl.kukla.krzys.bluetrade.btmodel.ExchangeSetDto;
 import pl.kukla.krzys.bluetrade.btstockreceiver.converter.ExternalExchangeConverter;
 import pl.kukla.krzys.bluetrade.btstockreceiver.gateway.ExternalExchangeApiClient;
-import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeDto;
-import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeSetDto;
 import pl.kukla.krzys.bluetrade.btstockreceiver.service.ExchangeService;
 
 /**

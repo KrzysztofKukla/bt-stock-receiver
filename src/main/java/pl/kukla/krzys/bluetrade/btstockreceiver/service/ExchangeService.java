@@ -1,7 +1,7 @@
 package pl.kukla.krzys.bluetrade.btstockreceiver.service;
 
-import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeDto;
-import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeSetDto;
+import pl.kukla.krzys.bluetrade.btmodel.ExchangeDto;
+import pl.kukla.krzys.bluetrade.btmodel.ExchangeSetDto;
 
 /**
  * @author Krzysztof Kukla

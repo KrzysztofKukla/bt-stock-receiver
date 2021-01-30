@@ -1,13 +1,14 @@
-package pl.kukla.krzys.bluetrade.btstockreceiver.converter;
+package pl.kukla.krzys.bluetrade.btstockreceiver.converter.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.kukla.krzys.bluetrade.btstockreceiver.exception.StockReceiverException;
-import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeDto;
-import pl.kukla.krzys.bluetrade.btstockreceiver.model.ExchangeSetDto;
+import pl.kukla.krzys.bluetrade.btmodel.ExchangeDto;
+import pl.kukla.krzys.bluetrade.btmodel.ExchangeSetDto;
+import pl.kukla.krzys.bluetrade.btstockreceiver.converter.ExternalExchangeConverter;
+import pl.kukla.krzys.bluetrade.btstockreceiver.exception.StockReceiverConverterException;
 
 /**
  * @author Krzysztof Kukla
@@ -24,7 +25,7 @@ public class ExternalExchangeConverterImpl implements ExternalExchangeConverter 
         try {
             return objectMapper.readValue(externalExchange, ExchangeDto.class);
         } catch (JsonProcessingException e) {
-            throw new StockReceiverException("Cannot convert to Exchange",e);
+            throw new StockReceiverConverterException("Cannot convert to Exchange", e);
         }
     }
 
@@ -33,7 +34,7 @@ public class ExternalExchangeConverterImpl implements ExternalExchangeConverter 
         try {
             return objectMapper.readValue(exchangeSetDto, ExchangeSetDto.class);
         } catch (JsonProcessingException e) {
-            throw new StockReceiverException("Cannot convert to Exchange",e);
+            throw new StockReceiverConverterException("Cannot convert to Exchange", e);
         }
     }
 

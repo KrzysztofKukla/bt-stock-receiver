@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author Krzysztof Kukla
  */
 @ResponseStatus(HttpStatus.BAD_GATEWAY)
-public class StockReceiverException extends RuntimeException {
+public class StockReceiverConverterException extends RuntimeException {
 
-    public StockReceiverException() {
+    public StockReceiverConverterException() {
     }
 
-    public StockReceiverException(String message) {
+    public StockReceiverConverterException(String message) {
         super(message);
     }
 
-    public StockReceiverException(String message, Throwable cause) {
+    public StockReceiverConverterException(String message, Throwable cause) {
         super(message, cause);
     }
 
